@@ -5,6 +5,7 @@ var {
   AppRegistry,
   Navigator,
   StyleSheet,
+  StatusBarIOS,
 } = React;
 
 var Colors = require('./Utils/Colors');
@@ -14,10 +15,12 @@ var CafCard = require('./Components/CafCard');
 var CafApp = React.createClass({
 
   renderScene: function(route, nav) {
+    StatusBarIOS.setStyle(1);
     if (route.scene == 'card') {
       return (
         <CafCard 
           title={route.title}
+          data={route}
           navigator={nav} />
       );
     } else {
@@ -47,7 +50,7 @@ var CafApp = React.createClass({
 var styles = StyleSheet.create({
   container: {
     paddingTop: 20,
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.dgray,
   },
 });
 

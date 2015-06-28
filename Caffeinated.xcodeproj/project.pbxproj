@@ -41,6 +41,8 @@
 		E11D82251B3EE33800EBB392 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E11D82171B3EE33800EBB392 /* zocial-regular-webfont.ttf */; };
 		E11D82281B3EE7D000EBB392 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E11D82271B3EE7D000EBB392 /* Brandon_bld.otf */; };
 		E11D822A1B3EE8CA00EBB392 /* HVD Fonts - PlutoSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E11D82291B3EE8CA00EBB392 /* HVD Fonts - PlutoSansMedium.otf */; };
+		E11D82781B3F938100EBB392 /* GT-Sectra-Book-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E11D82761B3F938100EBB392 /* GT-Sectra-Book-Italic.otf */; };
+		E11D82791B3F938100EBB392 /* GT-Sectra-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = E11D82771B3F938100EBB392 /* GT-Sectra-Book.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		E11D82171B3EE33800EBB392 /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zocial-regular-webfont.ttf"; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
 		E11D82271B3EE7D000EBB392 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brandon_bld.otf; path = "../../Documents/Fonts/Brandon Grotesque/Brandon_bld.otf"; sourceTree = "<group>"; };
 		E11D82291B3EE8CA00EBB392 /* HVD Fonts - PlutoSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HVD Fonts - PlutoSansMedium.otf"; path = "../../Documents/Fonts/Pluto Sans/HVD Fonts - PlutoSansMedium.otf"; sourceTree = "<group>"; };
+		E11D82761B3F938100EBB392 /* GT-Sectra-Book-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GT-Sectra-Book-Italic.otf"; path = "../../Documents/Fonts/GT Sectra/GT-Sectra-Book-Italic.otf"; sourceTree = "<group>"; };
+		E11D82771B3F938100EBB392 /* GT-Sectra-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GT-Sectra-Book.otf"; path = "../../Documents/Fonts/GT Sectra/GT-Sectra-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +382,8 @@
 		E11D82261B3EE79D00EBB392 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E11D82761B3F938100EBB392 /* GT-Sectra-Book-Italic.otf */,
+				E11D82771B3F938100EBB392 /* GT-Sectra-Book.otf */,
 				E11D82291B3EE8CA00EBB392 /* HVD Fonts - PlutoSansMedium.otf */,
 				E11D82271B3EE7D000EBB392 /* Brandon_bld.otf */,
 			);
@@ -594,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11D82781B3F938100EBB392 /* GT-Sectra-Book-Italic.otf in Resources */,
 				E11D82181B3EE33800EBB392 /* FAKFontAwesome.h in Resources */,
 				E11D82191B3EE33800EBB392 /* FAKFontAwesome.m in Resources */,
 				E11D821A1B3EE33800EBB392 /* FAKFoundationIcons.h in Resources */,
@@ -604,6 +611,7 @@
 				E11D821F1B3EE33800EBB392 /* FAKIonIcons.m in Resources */,
 				E11D82201B3EE33800EBB392 /* FAKZocial.h in Resources */,
 				E11D82211B3EE33800EBB392 /* FAKZocial.m in Resources */,
+				E11D82791B3F938100EBB392 /* GT-Sectra-Book.otf in Resources */,
 				E11D82221B3EE33800EBB392 /* FontAwesome.otf in Resources */,
 				E11D82231B3EE33800EBB392 /* FontAwesomeKit.h in Resources */,
 				E11D82241B3EE33800EBB392 /* foundation-icons.ttf in Resources */,

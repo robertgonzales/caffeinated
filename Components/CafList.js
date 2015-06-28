@@ -24,15 +24,18 @@ var CafList = React.createClass({
   onSelectItem: function(rowData) {
     this.props.navigator.push({
       scene: 'card',
-      title: rowData.title,
+      card: rowData,
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
     });
   },
   renderItems: function(rowData) {
     return (
-      <TouchableHighlight onPress={()=> this.onSelectItem(rowData)}>
-        <View style={[styles.listItem, listItemColor(rowData.id)]}>
-          <Text numberOfLines={1} style={styles.listItemText}>{rowData.title.toUpperCase()}</Text>
+      <TouchableHighlight 
+        underlayColor='transparent'
+        activeOpacity={1}
+        onPress={()=> this.onSelectItem(rowData)}>
+        <View style={[styles.listItem, cardColor(rowData.bgcolor)]}>
+          <Text numberOfLines={1} style={[styles.listItemText, textColor(rowData.color)]}>{rowData.title.toUpperCase()}</Text>
         </View>
       </TouchableHighlight>
     )
@@ -42,6 +45,7 @@ var CafList = React.createClass({
       <View style={styles.container}>
         <Text style={styles.title}>{this.props.title.toUpperCase()}</Text>
         <ListView
+          style={styles.list}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => this.renderItems(rowData)}
@@ -57,36 +61,40 @@ var styles = StyleSheet.create({
   },
   title: {
     fontFamily: Fonts.pluto,
-    color: 'white',
+    fontSize: 18,
+    color: Colors.ltan,
     textAlign: 'center',
     paddingTop: 10,
     paddingBottom: 15,
   },
+  list: {
+    paddingTop: 10,
+  },
   listItem: {
-    paddingTop: 20,
-    paddingBottom: 25,
+    paddingTop: 30,
+    paddingBottom: 35,
     marginTop: -10,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    borderWidth: 1,
   },
   listItemText: {
     fontFamily: Fonts.pluto,
     fontSize: 16,
-    color: Colors.ltan,
+    color: 'white',
     textAlign: 'center',
   },
 });
 
-var listItemColor = function(n) {
-  if (n % 2 == 0) {
-    return {
-      backgroundColor: Colors.red,
-    };
-  } else {
-    return {
-      backgroundColor: Colors.dred,
-    };
-  }
+var cardColor = function(color) {
+  return {
+    backgroundColor: color
+  };
+}
+var textColor = function(color) {
+  return {
+    color: color
+  };
 }
 
 module.exports = CafList;
