@@ -1,16 +1,19 @@
 'use strict';
 
 var React = require('react-native');
+var Icon = require('FAKIconImage');
 var {
   Navigator,
   StyleSheet,
   View,
+  Image,
   Text,
   ListView,
   TouchableHighlight,
+  PixelRatio,
 } = React;
 
-var Colors = require('../Utils/Colors');
+var getColor = require('../Utils/Colors');
 var Fonts = require('../Utils/Fonts');
 var CafStore = require('../Stores/CafStore.js')
 
@@ -34,8 +37,13 @@ var CafList = React.createClass({
         underlayColor='transparent'
         activeOpacity={1}
         onPress={()=> this.onSelectItem(rowData)}>
-        <View style={[styles.listItem, cardColor(rowData.bgcolor)]}>
-          <Text numberOfLines={1} style={[styles.listItemText, textColor(rowData.color)]}>{rowData.title.toUpperCase()}</Text>
+        <View style={styles.listItem}>
+          <Image source={rowData.image} style={styles.listItemImage}>
+            <View style={[styles.listItemWrapper, cardColor(rowData.bgcolor)]}>
+              <Text style={styles.listItemText}>{rowData.title}</Text>
+              <Text style={styles.listItemSub}>{rowData.time} MIN</Text>
+            </View>
+          </Image>
         </View>
       </TouchableHighlight>
     )
@@ -48,8 +56,14 @@ var CafList = React.createClass({
           style={styles.list}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => this.renderItems(rowData)}
-          />
+          renderRow={(rowData) => this.renderItems(rowData)}/>
+        <View style={styles.bar}>
+            <Icon 
+              name='ion|ios-plus-empty'
+              size={40}
+              color='white'
+              style={styles.plus}/>
+        </View>
       </View>
     );
   },
@@ -60,40 +74,56 @@ var styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontFamily: Fonts.pluto,
+    fontFamily: Fonts.plutoMed,
     fontSize: 18,
-    color: Colors.ltan,
-    textAlign: 'center',
-    paddingTop: 10,
-    paddingBottom: 15,
-  },
-  list: {
-    paddingTop: 10,
-  },
-  listItem: {
-    paddingTop: 30,
-    paddingBottom: 35,
-    marginTop: -10,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    borderWidth: 1,
-  },
-  listItemText: {
-    fontFamily: Fonts.pluto,
-    fontSize: 16,
     color: 'white',
     textAlign: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  list: {
+    paddingTop: 15,
+  },
+  listItem: {
+    flex: 1,
+    alignItems: 'stretch',
+    height: 150,
+    overflow: 'hidden',
+    marginTop: -12,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: 'transparent',
+  },
+  listItemWrapper: {
+    flex: 1,
+    padding: 10,
+  },
+  listItemText: {
+    marginTop: 80,
+    fontFamily: Fonts.archMed,
+    fontSize: 24,
+    color: 'white',
+  },
+  listItemSub: {
+    marginTop: -5,
+    fontFamily: Fonts.plutoMed,
+    fontSize: 12,
+    color: 'rgba(255,255,255,0.4)',
+  },
+  bar: {
+    height: 50,
+    backgroundColor: getColor('dgray'),
+  },
+  plus: {
+    height: 50,
+    width: 50,
   },
 });
 
 var cardColor = function(color) {
   return {
-    backgroundColor: color
-  };
-}
-var textColor = function(color) {
-  return {
-    color: color
+    backgroundColor: getColor(color, 0.3),
   };
 }
 

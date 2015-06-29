@@ -1,16 +1,22 @@
 var Colors = {
-  dgray: '#26221D',
-  gray: '#2F2A24',
-  lgray: '#4C443B',
-  dred: '#79260C',
-  red: '#8C2C0F',
-  dtan: '#BFB38D',
-  tan: '#CECDA5',
-  ltan: '#E5E5B8',
-  dbrown: '#332418',
-  brown: '#402D1F',
-  lbrown: '#4C3624',
-  blue: '#7399A5',
+  dgray: '38,34,29,',
+  gray: '47,42,36,',
+  lgray: '76,68,59,',
+  dred: '121,38,12,',
+  red: '140,44,15,',
+  dtan: '191,179,141,',
+  tan: '206,205,165,',
+  ltan: '229,229,184,',
+  dbrown: '51,36,24,',
+  brown: '64,45,31,',
+  lbrown: '76,54,36,',
+  blue: '115,153,165,',
+  lblue: '130,171,184,'
 };
 
-module.exports = Colors;
+var getColor = function(name, opacity) {
+  opacity = opacity || 1;
+  return 'rgba(' + Colors[name] + opacity + ')';
+}
+
+module.exports = getColor;

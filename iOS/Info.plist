@@ -4,10 +4,12 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Brandon_bld.otf</string>
 		<string>HVD Fonts - PlutoSansMedium.otf</string>
+		<string>HVD Fonts - PlutoSansLight.otf</string>
 		<string>GT-Sectra-Book.otf</string>
 		<string>GT-Sectra-Book-Italic.otf</string>
+		<string>Archer-Medium-Pro.otf</string>
+		<string>Archer-MediumItal-Pro.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

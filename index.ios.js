@@ -8,7 +8,7 @@ var {
   StatusBarIOS,
 } = React;
 
-var Colors = require('./Utils/Colors');
+var getColor = require('./Utils/Colors');
 var CafList = require('./Components/CafList');
 var CafCard = require('./Components/CafCard');
 
@@ -50,7 +50,7 @@ var CafApp = React.createClass({
 var styles = StyleSheet.create({
   container: {
     paddingTop: 20,
-    backgroundColor: Colors.dgray,
+    backgroundColor: getColor('gray'),
   },
 });
 
